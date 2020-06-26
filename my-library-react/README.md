@@ -1,19 +1,34 @@
 
-Based on https://github.com/ionic-team/stencil-ds-plugins-demo/tree/master/packages/component-library-react
+# React example
 
-> The project https://github.com/ionic-team/stencil-ds-react-template looks very similar, but is older and a little different in `package.json`, etc.
+This example based on [StencilJS's docs](https://stenciljs.com/docs/react) for integrating with React, and is based on https://github.com/ionic-team/stencil-ds-plugins-demo/tree/master/packages/component-library-react
 
-This is an example repo of building plugins.
+> The project https://github.com/ionic-team/stencil-ds-react-template looks very similar, but is older and a little different in `package.json`, etc. :shrug:
 
-## Step 1.
+1. Build the `my-library` core package, and `npm link` it
 
-Update the `package.json` to have the correct package name for this repo, `my-library-react`.
-Replace `my-library` under dependencies with your core stencil package name.
+    ```shell
+    cd ../my-library
+    npm run build
+    npm link
+    ```
 
-## Step 2.
+2. Link the core package with `npm link`, and install dependencies for running Playroom
 
-Build your core stencil package.
+    ```shell
+    cd ../my-library-react
+    npm link my-library
+    npm install
+    ```
 
-## Step 3.
+3. Build the react package
 
-Run build on this package.
+    ```shell
+    npm run build
+    ```
+
+4. Run Playroom
+
+    ```shell
+    npm run playroom:start
+    ```
